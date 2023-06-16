@@ -48,6 +48,11 @@
 #nav-buttons a{
   color: white;
   text-decoration: none;
+  transition: 400ms;
+}
+#nav-buttons a:hover{
+  color:  #05c9d7;
+  transition: 400ms;
 }
 .active{
   color:  #05c9d7;

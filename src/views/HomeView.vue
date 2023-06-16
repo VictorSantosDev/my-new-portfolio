@@ -16,13 +16,21 @@
           </p>
         </div>
         <div class="social-media">
-            <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            <a :href="urlWhatsapp" target="_blank">
+              <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlFacebook" target="_blank">
+              <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlInstagram" target="_blank">
+              <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlLinkedin" target="_blank">
+              <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
         </div>
         <div class="box-button-cv">
-          <button class="btn-cv">Baixar CV</button>
+          <a :href="pathCv" download="curriculo-victor.pdf" class="btn-cv">Baixar CV</a>
         </div>
       </div>
       <div class="box-my-self">
@@ -43,7 +51,12 @@ export default {
   },
   data(){
     return {
-      imagePath: 'img/my-self-1.png'
+      imagePath: 'img/my-self-1.png',
+      urlWhatsapp: 'https://api.whatsapp.com/send?phone=5511964780920&text=Oi%20Victor%20tudo%20bem%20?%20',
+      urlFacebook: 'https://www.facebook.com/profile.php?id=100023911251147',
+      urlInstagram: 'https://www.instagram.com/victor_sannttoss/',
+      urlLinkedin: 'https://www.linkedin.com/in/victor-e-2b8452a7/',
+      pathCv: require('@/assets/2023-cv.pdf')
     };
   }
 }
