@@ -56,7 +56,7 @@ export default {
       urlFacebook: 'https://www.facebook.com/profile.php?id=100023911251147',
       urlInstagram: 'https://www.instagram.com/victor_sannttoss/',
       urlLinkedin: 'https://www.linkedin.com/in/victor-e-2b8452a7/',
-      pathCv: require('@/assets/2023-cv.pdf')
+      pathCv: '@/assets/2023-cv.pdf'
     };
   }
 }
@@ -129,10 +129,14 @@ export default {
   box-shadow: 0 0px 10px#05c9d7;
   transition: 400ms;
   font-weight: 500;
+  color: #000000;
+  font-size: 12px;
+  text-decoration: none;
 }
 
 .btn-cv:hover{
   box-shadow: 0 0px 0px#05c9d7;
+  color: #ffffff;
 }
 
 /* .box-my-self{
