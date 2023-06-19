@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@mdi/js": "^7.2.96",
+    "@vueuse/motion": "^2.0.0",
     "core-js": "^3.8.3",
     "mdi-vue": "^3.0.13",
     "vue": "^3.2.13",

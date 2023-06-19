@@ -1,7 +1,13 @@
 <template>
   <div id="container-home">
     <div class="presentation">
-      <div class="box-msg-presentation">
+      <div 
+      v-motion
+      :initial="{ opacity: 0, x: -100 }"
+      :enter="{ opacity: 1, x: 0 }"
+      :variants="{ custom: { x: -100 } }"
+      :delay="200"
+      class="box-msg-presentation">
         <p class="msg-presentation">Olá, eu me chamo</p>
         <p class="msg-my-name">Victor Emanuel</p>
         <p class="msg-about">
@@ -15,26 +21,51 @@
             mas se preferir, pode explorar o meu portfólio por aqui.
           </p>
         </div>
-        <div class="social-media">
-            <a :href="urlWhatsapp" target="_blank">
-              <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            </a>
-            <a :href="urlFacebook" target="_blank">
-              <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            </a>
-            <a :href="urlInstagram" target="_blank">
-              <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            </a>
-            <a :href="urlLinkedin" target="_blank">
-              <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-            </a>
-        </div>
+          <div class="social-media">
+              <a :href="urlWhatsapp" target="_blank">
+                <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+              </a>
+              <a :href="urlFacebook" target="_blank">
+                <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+              </a>
+              <a :href="urlInstagram" target="_blank">
+                <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+              </a>
+              <a :href="urlLinkedin" target="_blank">
+                <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+              </a>
+          </div>
         <div class="box-button-cv">
           <a :href="pathCv" download="curriculo-victor.pdf" class="btn-cv">Baixar CV</a>
         </div>
       </div>
-      <div class="box-my-self">
+      <div 
+      v-motion
+      :initial="{ opacity: 0, x: 100 }"
+      :enter="{ opacity: 1, x: 0 }"
+      :variants="{ custom: { x: -100 } }"
+      :delay="300"
+      class="box-my-self">
         <img class="img-my-self" :src="imagePath" alt="Imagem" />
+      </div>
+    </div>
+    <div class="box-about">
+      <div 
+      v-motion
+      :initial="{ opacity: 0, x: 100 }"
+      :enter="{ opacity: 1, x: 0 }"
+      :variants="{ custom: { x: -100 } }"
+      :delay="300"
+      when: false
+      class="box-my-self">
+        <img class="img-abou-my-self" :src="imagePath" alt="Imagem" />
+      </div>
+      <div class="box-msg-about">
+        <p>
+          Olá, meu nome é Victor Emanule Almeida Santos e tenho {{ myAge }},
+          sou desenvolvedor back-end e estudande de Analise e desenvolvimento de sistemas
+          na universidade Nove de Julho(UNINOVE). 
+        </p>
       </div>
     </div>
   </div>
@@ -56,8 +87,23 @@ export default {
       urlFacebook: 'https://www.facebook.com/profile.php?id=100023911251147',
       urlInstagram: 'https://www.instagram.com/victor_sannttoss/',
       urlLinkedin: 'https://www.linkedin.com/in/victor-e-2b8452a7/',
-      pathCv: '@/assets/2023-cv.pdf'
+      pathCv: '@/assets/2023-cv.pdf',
+      myAge: '0'
     };
+  },
+  methods: {
+  },
+  mounted(){
+      const today = new Date();
+      const birthDate = new Date('1999-08-19');
+      let age = today.getFullYear() - birthDate.getFullYear();
+      const m = today.getMonth() - birthDate.getMonth();
+
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+          age--;
+      }
+
+      this.myAge = age;
   }
 }
 </script>
@@ -74,7 +120,16 @@ export default {
   align-items: center;
   height: 100%;
 }
+.box-about{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+}
 .img-my-self{
+  width: 400px;
+}
+.img-abou-my-self{
   width: 400px;
 }
 .msg-presentation{
@@ -137,6 +192,11 @@ export default {
 .btn-cv:hover{
   box-shadow: 0 0px 0px#05c9d7;
   color: #ffffff;
+}
+
+.box-msg-about{
+  border: 2px solid red;
+  width: 700px;
 }
 
 /* .box-my-self{
