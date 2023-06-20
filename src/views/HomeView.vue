@@ -1,6 +1,6 @@
 <template>
   <div id="container-home">
-    <div class="presentation">
+    <div id="presentation" class="presentation">
       <div 
       v-motion
       :initial="{ opacity: 0, x: -100 }"
@@ -21,20 +21,20 @@
             mas se preferir, pode explorar o meu portfólio por aqui.
           </p>
         </div>
-          <div class="social-media">
-              <a :href="urlWhatsapp" target="_blank">
-                <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-              </a>
-              <a :href="urlFacebook" target="_blank">
-                <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-              </a>
-              <a :href="urlInstagram" target="_blank">
-                <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-              </a>
-              <a :href="urlLinkedin" target="_blank">
-                <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
-              </a>
-          </div>
+        <div class="social-media">
+            <a :href="urlWhatsapp" target="_blank">
+              <mdicon name="whatsapp" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlFacebook" target="_blank">
+              <mdicon name="facebook" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlInstagram" target="_blank">
+              <mdicon name="instagram" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+            <a :href="urlLinkedin" target="_blank">
+              <mdicon name="linkedin" class="icon-social-media" style="color: #05c9d7;" :size="20"/>
+            </a>
+        </div>
         <div class="box-button-cv">
           <a :href="pathCv" download="curriculo-victor.pdf" class="btn-cv">Baixar CV</a>
         </div>
@@ -49,7 +49,7 @@
         <img class="img-my-self" :src="imagePath" alt="Imagem" />
       </div>
     </div>
-    <div class="box-about">
+    <div id="about" class="box-about">
       <div 
       v-motion
       :initial="{ opacity: 0, x: 100 }"
@@ -60,7 +60,13 @@
       class="box-my-self">
         <img class="img-abou-my-self" :src="imagePath" alt="Imagem" />
       </div>
-      <div class="box-msg-about">
+      <div v-motion-slide-visible-left class="box-msg-about">
+        <p class="title-about">
+          Sobre <span style="color: #05c9d7;">Mim</span>
+        </p>
+        <p class="my-job">
+          Desenvolvedor Back-End
+        </p>
         <p>
           Olá, meu nome é Victor Emanule Almeida Santos e tenho {{ myAge }},
           sou desenvolvedor back-end e estudande de Analise e desenvolvimento de sistemas
@@ -195,9 +201,16 @@ export default {
 }
 
 .box-msg-about{
-  border: 2px solid red;
-  width: 700px;
+  width: 500px;
 }
+
+.title-about{
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+/** my-job*/
 
 /* .box-my-self{
   border: 1px solid red;

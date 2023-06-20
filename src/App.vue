@@ -5,8 +5,8 @@
     </div>
 
     <div id="nav-buttons">
-      <router-link to="/"> <span  class="active">Principal</span></router-link>
-      <router-link to="/about">Sobre</router-link>
+      <a href="#presentation"><span  class="active">Principal</span></a>
+      <a href="#about">Sobre</a>
       <router-link to="/about">Serviços</router-link>
       <router-link to="/about">Portfolio</router-link>
       <router-link to="/about">Contato</router-link>
@@ -33,6 +33,8 @@
   justify-content: space-around;
   padding: 25px 0px;
   position: fixed;
+  z-index: 1000;
+  box-shadow: 0px 0px 5px #171718;
 }
 #logo{
   color: white;
@@ -56,5 +58,28 @@
 }
 .active{
   color:  #05c9d7;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #373e4e;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(24, 26, 32);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #13171c;
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #0b0d0f;
 }
 </style>
