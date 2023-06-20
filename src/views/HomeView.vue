@@ -67,11 +67,18 @@
         <p class="my-job">
           Desenvolvedor Back-End
         </p>
-        <p>
-          Olá, meu nome é Victor Emanule Almeida Santos e tenho {{ myAge }},
-          sou desenvolvedor back-end e estudande de Analise e desenvolvimento de sistemas
-          na universidade Nove de Julho(UNINOVE). 
+        <p class="text-about">
+          Olá, meu nome é Victor Emanuel Almeida Santos e tenho {{ myAge }}, anos. 
+          Sou desenvolvedor back-end e estudante de Análise e Desenvolvimento de 
+          Sistemas na Universidade Nove de Julho (UNINOVE).
         </p>
+      </div>
+    </div>
+    <div id="services">
+    </div>
+    <div id="portfolio">
+      <div class="box-portfolio">
+        <CardProject/>
       </div>
     </div>
   </div>
@@ -79,12 +86,12 @@
 
 <script>
 
-import HelloWorld from '@/components/HelloWorld.vue'
+import CardProject from '@/components/CardProject.vue';
 
 export default {
   name: 'HomeView',
   components: {
-    HelloWorld
+    CardProject
   },
   data(){
     return {
@@ -120,18 +127,13 @@ export default {
   color: white;
   height: calc(100vh - 70px);
 }
-.presentation{
+.presentation, .box-about {
   display: flex;
   justify-content: space-around;
   align-items: center;
   height: 100%;
 }
-.box-about{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  height: 100%;
-}
+
 .img-my-self{
   width: 400px;
 }
@@ -156,6 +158,7 @@ export default {
 }
 .msg-plus-about{
   margin-bottom: 30px;
+  font-size: 14px;
 }
 
 .social-media{
@@ -205,12 +208,27 @@ export default {
 }
 
 .title-about{
-  font-size: 25px;
-  font-weight: 500;
-  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 900;
+  margin-bottom: 5px;
 }
 
-/** my-job*/
+.my-job{
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 25px;
+}
+
+.text-about{
+  font-size: 14px;
+}
+
+#portfolio{
+  display: flex;
+}
+.box-portfolio{
+  padding: 0px 20px;
+}
 
 /* .box-my-self{
   border: 1px solid red;

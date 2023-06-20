@@ -7,8 +7,8 @@
     <div id="nav-buttons">
       <a href="#presentation"><span  class="active">Principal</span></a>
       <a href="#about">Sobre</a>
-      <router-link to="/about">Serviços</router-link>
-      <router-link to="/about">Portfolio</router-link>
+      <a href="#services">Serviços</a>
+      <a href="#portfolio">Portfolio</a>
       <router-link to="/about">Contato</router-link>
     </div>
   </nav>
@@ -23,7 +23,11 @@
   padding: 0px;
   font-family: 'Inter', sans-serif;
   background-color: #1d212a;
+  scroll-behavior: smooth;
+}
 
+html{
+  overflow-x: hidden;
 }
 
 #nav-main{
