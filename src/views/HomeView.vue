@@ -77,10 +77,28 @@
     <div id="services">
     </div>
     <div id="portfolio">
-      <div class="box-portfolio">
-        <CardProject/>
+      <div class="box-title-portfolio">
+        <span v-motion-slide-visible-top class="title-porfolio">
+          Últimos <span style="color: #05c9d7;">Projetos</span>
+        </span>
+      </div>
+      <div v-motion-slide-visible-once-top class="box-card-portfolio">
+        <CardProject />
+        <CardProject />
+        <CardProject />
       </div>
     </div>
+    <form id="contact">
+      <div class="title-contact">
+        <span>Entre em <span style="color: #05c9d7;">Contato</span></span>
+      </div>
+      <div class="">
+
+      </div>
+    </form>
+    <footer class="footer">
+
+    </footer>
   </div>
 </template>
 
@@ -225,9 +243,28 @@ export default {
 
 #portfolio{
   display: flex;
+  flex-direction: column;
 }
-.box-portfolio{
+.box-card-portfolio{
+  display: flex;
   padding: 0px 20px;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.box-title-portfolio{
+  text-align: center;
+  margin: 30px;
+}
+
+.title-porfolio{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.footer{
+  height: 100px;
+  width: 100%;
 }
 
 /* .box-my-self{
