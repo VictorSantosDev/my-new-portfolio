@@ -77,27 +77,38 @@
     <div id="services">
     </div>
     <div id="portfolio">
-      <div class="box-title-portfolio">
-        <span v-motion-slide-visible-top class="title-porfolio">
-          Últimos <span style="color: #05c9d7;">Projetos</span>
-        </span>
-      </div>
-      <div v-motion-slide-visible-once-top class="box-card-portfolio">
-        <CardProject />
-        <CardProject />
-        <CardProject />
+      <div>
+        <div class="box-title-portfolio">
+          <span v-motion-slide-visible-top class="title-porfolio">
+            Últimos <span style="color: #05c9d7;">Projetos</span>
+          </span>
+        </div>
+        <div v-motion-slide-visible-once-top class="box-card-portfolio">
+          <CardProject />
+          <CardProject />
+          <CardProject />
+        </div>
       </div>
     </div>
-    <form id="contact">
+    <div v-motion-slide-visible-top :delay="200" id="contact">
       <div class="title-contact">
         <span>Entre em <span style="color: #05c9d7;">Contato</span></span>
       </div>
-      <div class="">
-
-      </div>
-    </form>
+      <form class="box-form">
+        <div class="inputs-1">
+          <input type="text" class="input-1-name-complete" placeholder="Nome Completo">
+          <input type="text" class="input-1-address-email" placeholder="Endereço de E-mail">
+        </div>
+        <div class="inputs-2">
+          <input type="text" class="input-2-mobile-numebr" placeholder="Telefone para Contato">
+          <input type="text" class="input-2-address-email" placeholder="Assunto do E-mail">
+        </div>
+        <div class="textarea-box">
+          <textarea name="" id="" placeholder="Sua Mensagem"></textarea>
+        </div>
+      </form>
+    </div>
     <footer class="footer">
-
     </footer>
   </div>
 </template>
@@ -244,6 +255,8 @@ export default {
 #portfolio{
   display: flex;
   flex-direction: column;
+  margin: 80px;
+  height: 100%;
 }
 .box-card-portfolio{
   display: flex;
@@ -262,14 +275,75 @@ export default {
   font-weight: 600;
 }
 
-.footer{
-  height: 100px;
+#contact{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.title-contact{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.title-contact span{
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.box-form{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.input-1-name-complete,
+.input-1-address-email,
+.input-2-mobile-numebr,
+.input-2-address-email{
+  width: 300px;
+  height: 50px;
+  padding-left: 10px;
+  font-size: 0.8em;
+  margin: 5px;
+  border: none;
+  background: #363d4e;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.textarea-box{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
+}
+
+.textarea-box textarea{
+  resize: none;
+  padding: 10px;
+  font-size: 0.8em;
+  border: none;
+  background: #363d4e;
+  border-radius: 8px;
+  margin: 5px;
+  width: 100%;
+  height: 200px;
+  color: #ffffff;
 }
 
 /* .box-my-self{
   border: 1px solid red;
 } */
+
+.footer{
+  height: 100px;
+  width: 100%;
+}
+
 .img-my-self{
   animation: float 4s ease-in-out infinite;
   background: transparent;
@@ -282,4 +356,10 @@ export default {
     transform: translateY(-05%);
   }
 }
+
+textarea:focus, input:focus, select:focus {
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+} 
 </style>
